@@ -1,0 +1,6 @@
+azurerm_resource_group_name     = "example-resource-group"
+azurerm_resource_group_location = "Germany West Central"
+app_service_plan_name           = "projectraid-app-service-plan"
+function_app_name               = "projectraid-function-app"
+cosmosdb_endpoint               = "https://projectraid-cosmosdb.documents.azure.com:443/"
+dns_zone_name                   = "projectraid.com"

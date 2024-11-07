@@ -1,0 +1,18 @@
+# Azure CDN
+resource "azurerm_cdn_profile" "example" {
+  name                = "example-cdn"
+  resource_group_name = var.azurerm_resource_group_name
+  location            = "global"
+  sku                 = "Standard_Microsoft"
+}
+
+resource "azurerm_cdn_endpoint" "example" {
+  name                = "example-cdn-endpoint"
+  profile_name        = azurerm_cdn_profile.example.name
+  resource_group_name = var.azurerm_resource_group_name
+  location            = var.azurerm_resource_group_location
+  origin {
+    name      = "example-origin"
+    host_name = azurerm_storage_account.storage_account.primary_blob_host
+  }
+}

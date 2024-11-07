@@ -1,0 +1,7 @@
+<policies>
+  <inbound>
+    <base />
+    <!-- Rewrite the incoming request to route it to the Azure Functions endpoint -->
+    <rewrite-uri template="/api" />
+  </inbound>
+</policies>
